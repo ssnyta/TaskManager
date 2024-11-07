@@ -82,6 +82,7 @@
             this.createButton.TabIndex = 6;
             this.createButton.Text = "Vytvořit";
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
             // desTextBox
             // 

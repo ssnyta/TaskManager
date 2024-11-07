@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -36,14 +37,7 @@ namespace TaskManager
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string taskName = nameTextBox.Text;
-            string description = desTextBox.Text;
-            int id = tasks.Count + 1;
-            bool taskDone = false;
-
-            Task newTask = new Task(taskName, description, id, taskDone);
-
-            tasks.Add(newTask);
+            
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
@@ -62,10 +56,10 @@ namespace TaskManager
         }
         public class Task
         {
-            private string Name { get; set; }
-            private string Description { get; set; }
-            private int Id { get; set; }
-            private bool TaskStatus { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public int Id { get; set; }
+            public bool TaskStatus { get; set; }
             public Task(string name, string description, int id, bool taskStatus)
             {
                 Name = name;
@@ -73,6 +67,26 @@ namespace TaskManager
                 Id = id;
                 TaskStatus = taskStatus;
             }
+        }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            string taskName = nameTextBox.Text;
+            string description = desTextBox.Text;
+            int id = tasks.Count + 1;
+            bool taskDone = false;
+
+            Task newTask = new Task(taskName, description, id, taskDone);
+            tasks.Add(newTask);
+
+            // Update the ListBox to display tasks
+            activeTasks.Items.Clear(); // Clear existing items
+            foreach (var task in tasks)
+            {
+                activeTasks.Items.Add($"{task.Name} - {task.Description} (ID: {task.Id})");
+            }
+
+            Debug.WriteLine($"Created new task: {newTask.Name}, {newTask.Description}, {newTask.Id}, {newTask.TaskStatus}");
         }
     }
 }
