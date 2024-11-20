@@ -35,6 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.doneButton = new System.Windows.Forms.Button();
             this.doneTasks = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.activeTasks = new System.Windows.Forms.CheckedListBox();
@@ -65,6 +66,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.doneButton);
             this.splitContainer1.Panel2.Controls.Add(this.doneTasks);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.activeTasks);
@@ -130,19 +132,30 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Zadejte úkol";
             // 
+            // doneButton
+            // 
+            this.doneButton.Location = new System.Drawing.Point(331, 189);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(75, 23);
+            this.doneButton.TabIndex = 4;
+            this.doneButton.Text = "Hotovo";
+            this.doneButton.UseVisualStyleBackColor = true;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
+            // 
             // doneTasks
             // 
             this.doneTasks.FormattingEnabled = true;
-            this.doneTasks.Location = new System.Drawing.Point(19, 202);
+            this.doneTasks.Location = new System.Drawing.Point(19, 254);
             this.doneTasks.Name = "doneTasks";
             this.doneTasks.Size = new System.Drawing.Size(387, 184);
             this.doneTasks.TabIndex = 3;
+            this.doneTasks.SelectedIndexChanged += new System.EventHandler(this.doneTasks_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(16, 186);
+            this.label3.Location = new System.Drawing.Point(16, 238);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 2;
@@ -207,6 +220,7 @@
         private System.Windows.Forms.CheckedListBox activeTasks;
         private System.Windows.Forms.CheckedListBox doneTasks;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button doneButton;
     }
 }
 

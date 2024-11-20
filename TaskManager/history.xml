@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Task>
+    <Name>Vyvenčit psa</Name>
+    <Description>ať neposere koberec</Description>
+    <Id>1</Id>
+    <TaskStatus>false</TaskStatus>
+  </Task>
+</ArrayOfTask>
